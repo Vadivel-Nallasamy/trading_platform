@@ -1,1 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  overflow: hidden;
+  letter-spacing: 0.4px;
+}
+@theme {
+  /* Texts */
+  --color-primaryText: #262626;
+  --color-secondary: #737373;
+  --color-negative: #f15c5f;
+  --color-positive: #22c55e;
+  --color-product: #3b82f6;
+  --color-buttonProduct: #243f8d;
+  --color-teritary: #1c1e30;
+  --color-blackAndWhite: #ffffff;
+  --color-primaryBackground: #fcfcfc;
+  --color-secondaryBackground: #f3f3f3;
+  --color-primaryBorder: #d4d4d4;
+  --color-secondaryBorder: #d6d6d6;
+  --color-primaryButton: #18d2f2;
+  --color-secondaryButton: #e2f7ff;
+  --color-deep: #262626;
+  --color-loginBackground: white;
+  --color-productSwitch: #dbeafe;
+  --color-searchBackground: #0a0a0a;
+  --color-ringDefault: #a3a3a3;
+  --color-card: white;
+  --color-teritaryButton: #e5e5e5;
+  --color-overlay: #2a2a2a1a;
+  --color-positiveLight: #dcfce7;
+  --color-negativeLight: #fee2e2;
+  --color-footerBackground: #f3f3f3;
+  --color-warning: #ca8a04;
+  --color-warningLight: #fef9c3;
+  --color-primaryButtonText: #2a2c6f;
+  --color-hover: #e5e5e5;
+  --color-ocBackground: #fef3c6;
+  --color-layoutBackground: #ffffff;
+}
+.dark {
+  --color-primaryText: #fcfcfc;
+  --color-secondary: #f3f3f3;
+  --color-negative: #1c1515;
+  --color-positive: #22c55e;
+  --color-product: #3b82f6;
+  --color-buttonProduct: #243f8d;
+  --color-teritary: #1c1e30;
+  --color-blackAndWhite: black;
+  --color-primaryBackground: #0a0a0a;
+  /* secondaryBackground needs verification */
+  --color-secondaryBackground: #525252;
+  --color-primaryBorder: #525252;
+  --color-secondaryBorder: #d6d6d6;
+  --color-primaryButton: #18d2f2;
+  --color-secondaryButton: #097a8e;
+  --color-deep: #fcfcfc;
+  --color-loginBackground: #070d1c;
+  --color-productSwitch: #151637;
+  --color-searchBackground: #0a0a0a;
+  --color-ringDefault: #a3a3a3;
+  --color-card: #070d1c;
+  --color-teritaryButton: #404040;
+  --color-overlay: #2a2a2a1a;
+  --color-positiveLight: #14532d;
+  --color-negativeLight: #7f1d1d;
+  --color-footerBackground: #070d1c;
+  --color-warning: #ca8a04;
+  --color-warningLight: #fef9c3;
+  --color-primaryButtonText: #2a2c6f;
+  --color-hover: #151637;
+  --color-ocBackground: #097a8e;
+  --color-layoutBackground: #000000;
+}
+/* AUTH STYLES */
+.authCard {
+  @apply bg-loginBackground border-secondaryBorder w-full rounded-4xl border-[0.5px] p-8 md:w-[444px];
+}
+.loginInputLabel {
+  @apply text-primaryText text-sm font-medium;
+}
+.loginInput {
+  @apply placeholder:text-secondary mt-1 h-12 w-full rounded-xl border-[1px] pl-4 text-sm focus:outline-0;
+}
+.loginButton {
+  @apply bg-primaryButton text-primaryButtonText mt-5 h-12 w-full cursor-pointer rounded-full;
+}
+.loginCardShadow {
+  box-shadow: 0px 16px 48px 4px #6464641f;
+}
+.loginBg {
+  background-image: url("./assets/auth/aashikaLoginBg.png");
+  background-size: 100% 100%; /* fill width + height */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.dark .loginBg {
+  background-image: url("./assets/auth/aashikaLoginBgDark.png");
+  background-size: 100% 100%; /* fill width + height */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.centerFlex {
+  @apply flex items-center justify-center;
+}
+.betweenFlex {
+  @apply flex items-center justify-between;
+}
