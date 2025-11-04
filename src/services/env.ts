@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { store } from "../store/store";
+
 export function getUrl() {
   const baseUrl = import.meta.env.VITE_BASEURL;
   const chartUrl = "";
@@ -10,9 +13,10 @@ export function getUrl() {
 }
 
 export function authHeader(type: boolean) {
-  let userToken = "";
-  let userId = "";
-  let authToken = "";
+  const state = store.getState();
+  let userToken = state.auth.accessToken;
+  let userId = state.auth.userId;
+  let authToken = state.auth.accessToken;
 
   let obj = {};
   let authObj = {};
