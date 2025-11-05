@@ -9,9 +9,9 @@ export default function AuthenticatedContent() {
   //     return <Navigate to='/auth' replace />;
   //   }
   return (
-    <div>
+    <div className='h-screen w-screen flex flex-col'>
       <Header />
-      <main className='flex'>
+      <main className='flex h-full'>
         <Aside />
         <Outlet />
       </main>

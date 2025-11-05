@@ -119,3 +119,36 @@ body {
 .betweenFlex {
   @apply flex items-center justify-between;
 }
+
+/* SCROLLBAR HIDDEN */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE/Edge Legacy */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
+.scroll-container::-webkit-scrollbar {
+  width: 11px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  border: 3px solid #f1f1f1;
+  cursor: pointer;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

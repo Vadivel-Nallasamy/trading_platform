@@ -4,8 +4,9 @@ import HeaderText from "../authPieces/headerText";
 import LoginInput from "../authPieces/loginInput";
 import LogoHeader from "../authPieces/logoHeader";
 import SubmitButton from "../authPieces/submitButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { setAccessToken } from "../../../store/authStore";
 
 export default function VerifyOtp() {
   const { mutateAsync } = authData.verifyOtp({});
@@ -13,8 +14,10 @@ export default function VerifyOtp() {
 
   const navigate = useNavigate();
   const userId = useSelector((state) => state.auth.userId);
+  const dispatch = useDispatch();
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.target);
     const payload = Object.fromEntries(formData.entries());
     const json = {
@@ -23,7 +26,8 @@ export default function VerifyOtp() {
       otp: payload.otp,
     };
     await mutateAsync(json, {
-      onSuccess: () => {
+      onSuccess: async (res) => {
+        dispatch(await setAccessToken(res[0].accessToken));
         navigate("/home");
       },
     });
