@@ -22,7 +22,25 @@ async function getWatchlist() {
     throw new Error("Uh! Oh!!!");
   }
 }
+async function getPredefinedList() {
+  const res = await AXIOS().get(
+    "omt/mw-rest/preMarketWatch/getAllData",
+    authHeader(true)
+  );
+  if (
+    res.status == 200 &&
+    res.data.status == "ECMW001" &&
+    res.data.message == "Success" &&
+    res.data.result &&
+    res.data.result.length > 0
+  ) {
+    return res.data.result;
+  } else {
+    throw new Error("Uh! Oh!!!");
+  }
+}
 const watchServices = {
   getWatchlist,
+  getPredefinedList,
 };
 export default watchServices;

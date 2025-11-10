@@ -11,3 +11,14 @@ export const useGetWatchlist = () => {
     // enabled: false,
   });
 };
+export const useGetPredefinedList = () => {
+  return useQuery({
+    queryKey: ["predefined_list"],
+    queryFn: watchServices.getPredefinedList,
+    refetchOnWindowFocus: false,
+    // refetchOnMount: "always",
+    enabled: false,
+    refetchOnMount: false,
+    refetchOnReconnect: false,
+  });
+};
