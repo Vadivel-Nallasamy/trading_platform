@@ -91,7 +91,9 @@ export default function Watchlist() {
     } else {
       element = userdefinedTabs.find((el) => el.key == activeUserdefinedTab);
     }
-    scrollTab(element);
+    if (element) {
+      scrollTab(element);
+    }
   }, [
     activeUserdefinedTab,
     activePredefinedTab,
