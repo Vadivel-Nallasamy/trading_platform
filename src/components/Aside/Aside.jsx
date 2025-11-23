@@ -22,6 +22,7 @@ export default function Aside() {
           tabs={tabs}
           activeTab={activeTab}
           setActiveTab={changeActiveTab}
+          customClass={"flex-1"}
         />
       </div>
       <Watchlist />

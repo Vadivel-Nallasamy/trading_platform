@@ -11,10 +11,12 @@ export default function AuthenticatedContent() {
   return (
     <div className='h-screen w-screen flex flex-col'>
       <Header />
-      <main className='flex h-full'>
+      <div className='flex h-full  '>
         <Aside />
-        <Outlet />
-      </main>
+        <main className=' mx-3 h-full border rounded-xl flex flex-col flex-1 min-w-0 border-primaryBorder'>
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }

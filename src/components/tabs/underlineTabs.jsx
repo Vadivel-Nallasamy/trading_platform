@@ -1,4 +1,9 @@
-export default function UnderlineTabs({ tabs, activeTab, setActiveTab }) {
+export default function UnderlineTabs({
+  tabs,
+  activeTab,
+  setActiveTab,
+  customClass,
+}) {
   return (
     <div className='flex h-9 border-b border-primaryBorder '>
       {tabs.map((el) => {
@@ -9,7 +14,7 @@ export default function UnderlineTabs({ tabs, activeTab, setActiveTab }) {
         return (
           <button
             onClick={() => setActiveTab(el.key)}
-            className={active + "text-sm flex-1 cursor-pointer"}
+            className={active + "text-sm  cursor-pointer " + customClass}
             key={el.name}
           >
             {el.name}
